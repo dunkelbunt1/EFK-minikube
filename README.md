@@ -1,27 +1,28 @@
 # EFK-minikube
 Non production setup of the EFK stack on minikube
 
-1. ** Create the namespace ** 
+1. **Create the namespace** 
 ```
 kubectl create -f kube-logging.yaml
 ```
-2. **  Create the elastic search service ** 
+2. **Create the elastic search service** 
 ```
 kubectl create -f elasticsearch_svc.yaml
 ```
-3. ** Create elastic search as a Stateful Set ** 
+3. **Create elastic search as a Stateful Set** 
 ```
 kubectl create -f elasticsearch_statefulset.yaml
 ```
-4. ** Creating the Kibana Deployment and Service ** 
+4. **Creating the Kibana Deployment and Service** 
 ```
 kubectl create -f kibana.yaml
 ```
-5. ** Creating the Fluentd DaemonSet ** 
+5. **Creating the Fluentd DaemonSet** 
 ```
 kubectl create -f fuentd.yaml
 ```
-6. ** Accessing the UI** 
+6. **Accessing the UI** 
+
 Oberserve the name of your Kibana pod:
 
 ```
@@ -42,7 +43,7 @@ visit the following web URL:
 http://localhost:5601
 ```
 
-7. ** Testing the logging ** 
+7. **Testing the logging** 
 
 ```
 kubectl create -f counter.yaml
@@ -51,7 +52,6 @@ kubectl create -f counter.yaml
 
 
 
-** Version:** 
+**Version:** 
 
-kubectl version: 1.18.x
-minikube version: v1.9.x
+kubectl version: 1.18.x, minikube version: v1.9.x
