@@ -1,0 +1,5 @@
+#Create namespace, named kube logging
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: kube-logging

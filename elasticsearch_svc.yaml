@@ -1,0 +1,19 @@
+# Create a Headless services named elasticsearch, that will define a DNS domain
+kind: Service
+apiVersion: v1
+#Define the service in the namespace
+metadata:
+  name: elasticsearch
+  namespace: kube-logging
+  labels:
+    app: elasticsearch
+spec:
+  selector:
+    app: elasticsearch
+  #Renderes The service Headless
+  clusterIP: None
+  ports:
+    - port: 9200
+      name: rest
+    - port: 9300
+      name: inter-node
