@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: es-cluster
-  namespace: kube-logging
+  namespace: efk
 spec:
   serviceName: elasticsearch
   replicas: 3
@@ -71,7 +71,7 @@ spec:
         app: elasticsearch
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: standard
+      storageClassName: do-block-storage
       resources:
         requests:
           storage: 5Gi

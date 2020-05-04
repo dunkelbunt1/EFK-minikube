@@ -4,7 +4,7 @@ apiVersion: v1
 #Define the service in the namespace
 metadata:
   name: elasticsearch
-  namespace: kube-logging
+  namespace: efk
   labels:
     app: elasticsearch
 spec:
