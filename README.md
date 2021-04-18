@@ -9,19 +9,23 @@ kubectl create -f kube-logging.yaml
 ```
 kubectl create -f elasticsearch_svc.yaml
 ```
-3. **Create elastic search as a Stateful Set** 
+3. **Create the elastic search persistent volume**
+```
+kubectl create -f elasticsearch-pv.yaml
+``` 
+4. **Create elastic search as a Stateful Set** 
 ```
 kubectl create -f elasticsearch_statefulset.yaml
 ```
-4. **Creating the Kibana Deployment and Service** 
+5. **Creating the Kibana Deployment and Service** 
 ```
 kubectl create -f kibana.yaml
 ```
-5. **Creating the Fluentd DaemonSet** 
+6. **Creating the Fluentd DaemonSet** 
 ```
-kubectl create -f fuentd.yaml
+kubectl create -f fluentd.yaml
 ```
-6. **Accessing the UI** 
+7. **Accessing the UI** 
 
 Oberserve the name of your Kibana pod:
 
